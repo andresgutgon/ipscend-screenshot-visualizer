@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<head>
-  <title>AWESOME</title>
-  <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+<html>
+  <head>
+    <title>ipsend visualizer</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
 
-  <link rel="stylesheet" type="text/css" href="css/coverflow.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
-  <h1>ipscend</h1>
-  <!-- done with http://coverflowjs.github.io/ -->
-  <div id="coverflow" class="row previews"></div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/ipfsapi.min.js"></script>
+    <script src="js/timemachine.js"></script>
+    <script src="js/preview.js"></script>
+  </head>
+  <body>
+    <canvas class='js-canvas' width="400" height="300"></canvas>
+    <div class='js-loading'>Loading...</div>
+    <button class='js-back btn btn-default'>Back</button>
+    <button class='js-forward btn btn-default'>Forward</button>
+    <ul class='js-viewer-timeline'></ul>
 
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/coverflow.min.js"></script>
+    <form action=''>
+      <!--<input class='js-viewer-slider' type="range" min="100" max="500" step="10" />-->
+    </form>
 
-  <script src="js/ipfsapi.min.js"></script>
-  <script src="js/preview.js"></script>
-
-</body>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        var viewer = $('.js-canvas').ipesendPreview({
+          forward_button: $('.js-forward'),
+          back_button: $('.js-back'),
+          loading: '.js-loading'
+        });
+      });
+    </script>
+  </body>
+</html>

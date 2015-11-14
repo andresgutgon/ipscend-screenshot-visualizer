@@ -1,0 +1,10 @@
+canvas {
+  display:block;
+}
+.item {
+  cursor:pointer;
+    
+}
+.item:hover {
+  color:#900;
+}
